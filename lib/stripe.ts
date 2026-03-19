@@ -1,15 +1,16 @@
 import Stripe from 'stripe'
 
-export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2025-01-27.acacia',
-})
+export function getStripe(): Stripe {
+  return new Stripe(process.env.STRIPE_SECRET_KEY ?? 'sk_placeholder', {
+    apiVersion: '2025-01-27.acacia',
+  })
+}
 
 export const PLANS = {
   tier1: {
     name: 'Grant Database',
     price: 29,
-    priceId: process.env.STRIPE_TIER1_PRICE_ID!,
-    description: 'Full access to the curated grant database',
+    priceId: process.env.STRIPE_TIER1_PRICE_ID ?? '',
     features: [
       'Searchable database of 300+ grants',
       'Women-owned & Indigenous filters',
@@ -22,8 +23,7 @@ export const PLANS = {
   tier2: {
     name: 'Grant Concierge',
     price: 199,
-    priceId: process.env.STRIPE_TIER2_PRICE_ID!,
-    description: 'AI-powered done-for-you grant writing',
+    priceId: process.env.STRIPE_TIER2_PRICE_ID ?? '',
     features: [
       'Everything in Grant Database',
       'AI writes your full applications',

@@ -1,9 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { stripe } from '@/lib/stripe'
+import { getStripe } from '@/lib/stripe'
 import { createAdminClient } from '@/lib/supabase/server'
 import Stripe from 'stripe'
 
 export async function POST(req: NextRequest) {
+  const stripe = getStripe()
+  const supabase = createAdminClient()
   const body = await req.text()
   const sig = req.headers.get('stripe-signature')!
 
@@ -11,8 +13,6 @@ export async function POST(req: NextRequest) {
   try {
     event = stripe.webhooks.constructEvent(body, sig, process.env.STRIPE_WEBHOOK_SECRET!)
   } catch { return NextResponse.json({ error: 'Invalid signature' }, { status: 400 }) }
-
-  const supabase = createAdminClient()
 
   switch (event.type) {
     case 'checkout.session.completed': {
