@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
 
   switch (event.type) {
     case 'checkout.session.completed': {
-      const session = event.data.object as Stripe.CheckoutSession
+      const session = event.data.object as Stripe.Checkout.Session
       const { userId, tier } = session.metadata || {}
       if (userId && tier) {
         await supabase.from('profiles').update({
