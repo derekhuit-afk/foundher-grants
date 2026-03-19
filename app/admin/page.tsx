@@ -54,7 +54,7 @@ export default async function AdminPage() {
         ].map(s => (
           <div key={s.label} className="card p-5">
             <s.icon size={18} className={`${s.color} mb-2`} />
-            <p className="font-display font-700 text-2xl text-charcoal">{s.value}</p>
+            <p className="font-display font-bold text-2xl text-charcoal">{s.value}</p>
             <p className="font-sans text-xs text-charcoal/50 mt-1">{s.label}</p>
           </div>
         ))}
@@ -63,7 +63,7 @@ export default async function AdminPage() {
       <div className="grid md:grid-cols-2 gap-8 mb-10">
         {/* Recent signups */}
         <div className="card p-6">
-          <h2 className="font-display font-600 text-lg text-charcoal mb-4">Recent Signups</h2>
+          <h2 className="font-display font-semibold text-lg text-charcoal mb-4">Recent Signups</h2>
           <div className="space-y-3">
             {recentUsers?.map(u => (
               <div key={u.id} className="flex items-center justify-between py-2 border-b border-sand-100 last:border-0">
@@ -84,7 +84,7 @@ export default async function AdminPage() {
 
         {/* Recent applications */}
         <div className="card p-6">
-          <h2 className="font-display font-600 text-lg text-charcoal mb-4">Recent Applications</h2>
+          <h2 className="font-display font-semibold text-lg text-charcoal mb-4">Recent Applications</h2>
           <div className="space-y-3">
             {recentApps?.map((a: any) => (
               <div key={a.id} className="flex items-center justify-between py-2 border-b border-sand-100 last:border-0">
@@ -107,7 +107,7 @@ export default async function AdminPage() {
       <div className="card p-6">
         <div className="flex items-center gap-3 mb-6">
           <Database size={18} className="text-clay-500" />
-          <h2 className="font-display font-600 text-lg text-charcoal">Add Grant to Database</h2>
+          <h2 className="font-display font-semibold text-lg text-charcoal">Add Grant to Database</h2>
           <span className="font-sans text-xs text-charcoal/40">({grantCount} active grants)</span>
         </div>
         <AdminGrantForm />

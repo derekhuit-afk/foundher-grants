@@ -59,7 +59,7 @@ export default function PricingPage() {
             <div className="mb-6">
               <div className="section-label mb-3">Grant Database</div>
               <div className="flex items-end gap-1 mb-1">
-                <span className="font-display font-700 text-6xl text-charcoal">$29</span>
+                <span className="font-display font-bold text-6xl text-charcoal">$29</span>
                 <span className="font-sans text-charcoal/50 mb-3 text-lg">/month</span>
               </div>
               <p className="font-sans text-sm text-charcoal/40">Cancel any time. No contracts.</p>
@@ -82,19 +82,19 @@ export default function PricingPage() {
           {/* Tier 2 */}
           <div className="flex flex-col rounded-2xl border-2 border-clay-400 overflow-hidden relative">
             <div className="bg-clay-500 text-white text-center py-3">
-              <span className="font-sans font-500 text-sm tracking-wide">MOST POPULAR — HIGHEST ROI</span>
+              <span className="font-sans font-medium text-sm tracking-wide">MOST POPULAR — HIGHEST ROI</span>
             </div>
             <div className="bg-gradient-to-br from-clay-50 to-cream p-8 flex flex-col flex-1">
               <div className="mb-6">
                 <div className="section-label mb-3 text-clay-600">Grant Concierge</div>
                 <div className="flex items-end gap-1 mb-1">
-                  <span className="font-display font-700 text-6xl text-charcoal">$199</span>
+                  <span className="font-display font-bold text-6xl text-charcoal">$199</span>
                   <span className="font-sans text-charcoal/50 mb-3 text-lg">/month</span>
                 </div>
                 <p className="font-sans text-sm text-charcoal/40">12-month minimum commitment</p>
               </div>
               <div className="bg-forest-50 border border-forest-200 rounded-xl p-4 mb-6">
-                <p className="font-sans text-sm font-500 text-forest-700">Average ROI: $18,500/year</p>
+                <p className="font-sans text-sm font-medium text-forest-700">Average ROI: $18,500/year</p>
                 <p className="font-sans text-xs text-forest-600 mt-0.5">One successful grant covers your entire annual subscription 7×</p>
               </div>
               <p className="font-body text-charcoal/70 mb-8 leading-relaxed">
@@ -127,7 +127,7 @@ export default function PricingPage() {
               { label: 'ROI on first grant', value: '675%', sub: 'One win covers 7 years' },
             ].map(item => (
               <div key={item.label}>
-                <p className="font-display font-700 text-4xl text-clay-400 mb-1">{item.value}</p>
+                <p className="font-display font-bold text-4xl text-clay-400 mb-1">{item.value}</p>
                 <p className="font-sans text-sm text-white/70 mb-1">{item.label}</p>
                 <p className="font-sans text-xs text-white/30">{item.sub}</p>
               </div>
@@ -141,7 +141,7 @@ export default function PricingPage() {
           <div className="space-y-6">
             {FAQS.map(faq => (
               <div key={faq.q} className="card p-6">
-                <p className="font-sans font-500 text-charcoal mb-3">{faq.q}</p>
+                <p className="font-sans font-medium text-charcoal mb-3">{faq.q}</p>
                 <p className="font-body text-sm text-charcoal/70 leading-relaxed">{faq.a}</p>
               </div>
             ))}

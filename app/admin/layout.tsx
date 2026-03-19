@@ -17,9 +17,9 @@ export default async function AdminLayout({ children }: { children: React.ReactN
         <div className="p-6 border-b border-white/10">
           <Link href="/" className="flex items-center gap-2">
             <div className="w-7 h-7 bg-clay-500 rounded-full flex items-center justify-center">
-              <span className="text-white font-display font-700 text-xs">F</span>
+              <span className="text-white font-display font-bold text-xs">F</span>
             </div>
-            <span className="font-display font-600 text-white text-base">Admin</span>
+            <span className="font-display font-semibold text-white text-base">Admin</span>
           </Link>
         </div>
         <nav className="flex-1 p-4 space-y-1">

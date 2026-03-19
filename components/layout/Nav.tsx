@@ -23,9 +23,9 @@ export default function Nav({ transparent = false }: { transparent?: boolean }) 
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <div className="w-8 h-8 bg-clay-500 rounded-full flex items-center justify-center">
-            <span className="text-white font-display font-700 text-sm">F</span>
+            <span className="text-white font-display font-bold text-sm">F</span>
           </div>
-          <span className="font-display font-600 text-charcoal text-lg">FoundHer <span className="text-clay-500">Grants</span></span>
+          <span className="font-display font-semibold text-charcoal text-lg">FoundHer <span className="text-clay-500">Grants</span></span>
         </Link>
 
         {/* Desktop links */}

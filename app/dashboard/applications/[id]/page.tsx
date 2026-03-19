@@ -35,7 +35,7 @@ export default async function ApplicationPage({ params }: { params: { id: string
           <div className="flex items-start gap-3">
             <CheckCircle size={18} className="text-forest-500 mt-0.5" />
             <div>
-              <p className="font-sans font-500 text-sm text-charcoal mb-1">Eligibility Validation</p>
+              <p className="font-sans font-medium text-sm text-charcoal mb-1">Eligibility Validation</p>
               <p className="font-sans text-xs text-charcoal/60 whitespace-pre-line">{app.eligibility_report.report}</p>
             </div>
           </div>
@@ -48,7 +48,7 @@ export default async function ApplicationPage({ params }: { params: { id: string
           <div className="flex items-start gap-3">
             <AlertCircle size={18} className="text-clay-500 mt-0.5" />
             <div>
-              <p className="font-sans font-500 text-sm text-charcoal mb-2">Information Needed From You</p>
+              <p className="font-sans font-medium text-sm text-charcoal mb-2">Information Needed From You</p>
               {app.missing_info.map((item: string, i: number) => (
                 <p key={i} className="font-sans text-xs text-charcoal/60 mb-1">• {item}</p>
               ))}
@@ -61,7 +61,7 @@ export default async function ApplicationPage({ params }: { params: { id: string
       {app.narrative_draft && (
         <div className="card p-8">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="font-display font-600 text-xl text-charcoal">Complete Application Package</h2>
+            <h2 className="font-display font-semibold text-xl text-charcoal">Complete Application Package</h2>
             <div className="flex gap-2">
               {app.grants?.application_url && (
                 <a href={app.grants.application_url} target="_blank" rel="noopener noreferrer"
@@ -84,7 +84,7 @@ export default async function ApplicationPage({ params }: { params: { id: string
           <div className="w-12 h-12 rounded-full bg-clay-100 flex items-center justify-center mx-auto mb-4 animate-pulse">
             <div className="w-5 h-5 rounded-full bg-clay-300" />
           </div>
-          <p className="font-sans font-500 text-charcoal mb-1">Generating your application...</p>
+          <p className="font-sans font-medium text-charcoal mb-1">Generating your application...</p>
           <p className="font-sans text-sm text-charcoal/50">This takes 2–3 minutes. Refresh to check progress.</p>
         </div>
       )}

@@ -27,9 +27,9 @@ export default async function DashboardLayout({ children }: { children: React.Re
         <div className="p-6 border-b border-white/10">
           <Link href="/" className="flex items-center gap-2">
             <div className="w-7 h-7 bg-clay-500 rounded-full flex items-center justify-center">
-              <span className="text-white font-display font-700 text-xs">F</span>
+              <span className="text-white font-display font-bold text-xs">F</span>
             </div>
-            <span className="font-display font-600 text-white text-base">FoundHer</span>
+            <span className="font-display font-semibold text-white text-base">FoundHer</span>
           </Link>
         </div>
 
@@ -37,7 +37,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
         <div className="mx-4 mt-4 p-3 rounded-xl bg-white/5 border border-white/10">
           <p className="font-sans text-xs text-white/40 mb-1">Current Plan</p>
           <div className="flex items-center justify-between">
-            <span className="font-sans font-500 text-sm text-white capitalize">
+            <span className="font-sans font-medium text-sm text-white capitalize">
               {tier === 'free' ? 'Free' : tier === 'tier1' ? 'Database' : 'Concierge'}
             </span>
             {tier !== 'tier2' && (
@@ -61,7 +61,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
         <div className="p-4 border-t border-white/10">
           <div className="flex items-center gap-3 mb-3">
             <div className="w-8 h-8 rounded-full bg-clay-500 flex items-center justify-center">
-              <span className="text-white font-sans font-500 text-sm">
+              <span className="text-white font-sans font-medium text-sm">
                 {(profile?.full_name || user.email || 'U')[0].toUpperCase()}
               </span>
             </div>

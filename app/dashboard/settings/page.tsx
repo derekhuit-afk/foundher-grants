@@ -66,7 +66,7 @@ export default function SettingsPage() {
       <div className="card p-6 mb-6">
         <div className="flex items-center gap-3 mb-5">
           <User size={18} className="text-clay-500" />
-          <h2 className="font-display font-600 text-lg text-charcoal">Profile</h2>
+          <h2 className="font-display font-semibold text-lg text-charcoal">Profile</h2>
         </div>
         <div className="space-y-4">
           <div>
@@ -89,12 +89,12 @@ export default function SettingsPage() {
       <div className="card p-6 mb-6">
         <div className="flex items-center gap-3 mb-5">
           <CreditCard size={18} className="text-clay-500" />
-          <h2 className="font-display font-600 text-lg text-charcoal">Subscription</h2>
+          <h2 className="font-display font-semibold text-lg text-charcoal">Subscription</h2>
         </div>
         <div className="bg-sand-50 rounded-xl p-4 mb-4">
           <div className="flex items-center justify-between">
             <div>
-              <p className="font-sans font-500 text-charcoal capitalize">
+              <p className="font-sans font-medium text-charcoal capitalize">
                 {profile.subscription_tier === 'free' ? 'Free Plan' : profile.subscription_tier === 'tier1' ? 'Grant Database — $29/month' : 'Grant Concierge — $199/month'}
               </p>
               <p className="font-sans text-xs text-charcoal/50 mt-0.5 capitalize">Status: {profile.subscription_status || 'inactive'}</p>
@@ -121,7 +121,7 @@ export default function SettingsPage() {
         <div className="card p-6">
           <div className="flex items-center gap-3 mb-5">
             <Bell size={18} className="text-clay-500" />
-            <h2 className="font-display font-600 text-lg text-charcoal">Email Alerts</h2>
+            <h2 className="font-display font-semibold text-lg text-charcoal">Email Alerts</h2>
           </div>
           <div className="space-y-4">
             {[
@@ -132,7 +132,7 @@ export default function SettingsPage() {
             ].map(({ key, label, desc }) => (
               <label key={key} className="flex items-center justify-between gap-4 cursor-pointer">
                 <div>
-                  <p className="font-sans text-sm font-500 text-charcoal">{label}</p>
+                  <p className="font-sans text-sm font-medium text-charcoal">{label}</p>
                   <p className="font-sans text-xs text-charcoal/50">{desc}</p>
                 </div>
                 <div

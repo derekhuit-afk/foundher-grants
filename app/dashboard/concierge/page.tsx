@@ -93,7 +93,7 @@ export default function ConciergePage() {
       <div className="p-8 flex items-center justify-center min-h-96">
         <div className="max-w-md text-center card p-10">
           <Lock size={40} className="text-clay-300 mx-auto mb-4" />
-          <h2 className="font-display font-700 text-2xl text-charcoal mb-3">Grant Concierge is Tier 2</h2>
+          <h2 className="font-display font-bold text-2xl text-charcoal mb-3">Grant Concierge is Tier 2</h2>
           <p className="font-body text-charcoal/60 mb-6 leading-relaxed">
             Upgrade to Grant Concierge and our AI writes complete, submission-ready applications for you. $199/month, 12-month minimum.
           </p>
@@ -110,7 +110,7 @@ export default function ConciergePage() {
       <div className="p-8 flex items-center justify-center min-h-96">
         <div className="max-w-md text-center card p-10">
           <AlertCircle size={40} className="text-clay-400 mx-auto mb-4" />
-          <h2 className="font-display font-700 text-2xl text-charcoal mb-3">Complete your profile first</h2>
+          <h2 className="font-display font-bold text-2xl text-charcoal mb-3">Complete your profile first</h2>
           <p className="font-body text-charcoal/60 mb-6">Your founder profile is needed for the AI to write personalized applications.</p>
           <Link href="/dashboard/onboarding" className="btn-primary w-full justify-center">Complete Profile →</Link>
         </div>
@@ -129,7 +129,7 @@ export default function ConciergePage() {
       <div className="grid md:grid-cols-2 gap-8 mb-10">
         {/* Grant selector */}
         <div className="card p-6">
-          <h2 className="font-display font-600 text-xl text-charcoal mb-4">1. Select a Grant</h2>
+          <h2 className="font-display font-semibold text-xl text-charcoal mb-4">1. Select a Grant</h2>
           <div className="space-y-3 max-h-80 overflow-y-auto">
             {grants.map(g => (
               <div key={g.id} onClick={() => setSelectedGrant(g.id)}
@@ -137,11 +137,11 @@ export default function ConciergePage() {
                   selectedGrant === g.id ? 'border-clay-400 bg-clay-50' : 'border-sand-200 hover:border-clay-200')}>
                 <div className="flex items-start justify-between">
                   <div>
-                    <p className="font-sans font-500 text-sm text-charcoal">{g.name}</p>
+                    <p className="font-sans font-medium text-sm text-charcoal">{g.name}</p>
                     <p className="font-sans text-xs text-charcoal/50 mt-0.5">{g.grantor_organization}</p>
                   </div>
                   <div className="text-right flex-shrink-0 ml-3">
-                    <p className="font-display font-700 text-base text-clay-500">{g.amount_display || formatCurrency(g.max_amount)}</p>
+                    <p className="font-display font-bold text-base text-clay-500">{g.amount_display || formatCurrency(g.max_amount)}</p>
                     {g.deadline && <p className="font-sans text-xs text-charcoal/40">{daysUntil(g.deadline)}d left</p>}
                   </div>
                 </div>
@@ -153,12 +153,12 @@ export default function ConciergePage() {
 
         {/* Launch panel */}
         <div className="card p-6 flex flex-col">
-          <h2 className="font-display font-600 text-xl text-charcoal mb-4">2. Generate Application</h2>
+          <h2 className="font-display font-semibold text-xl text-charcoal mb-4">2. Generate Application</h2>
 
           {!loading && !activeApp && (
             <>
               <div className="flex-1 bg-clay-50 rounded-xl p-5 mb-5">
-                <p className="font-sans text-sm font-500 text-charcoal mb-3">What the AI will produce:</p>
+                <p className="font-sans text-sm font-medium text-charcoal mb-3">What the AI will produce:</p>
                 {['Executive Summary','Mission Alignment Statement','Founder Biography','Use of Funds Narrative','Organizational Capacity Statement','Community Impact Statement','Cover Letter'].map(s => (
                   <div key={s} className="flex items-center gap-2 mb-2">
                     <CheckCircle size={13} className="text-forest-500" />
@@ -187,7 +187,7 @@ export default function ConciergePage() {
                         : <div className="w-3 h-3 rounded-full bg-sand-300" />}
                     </div>
                     <div>
-                      <p className="font-sans text-xs font-500 text-charcoal">{step.label}</p>
+                      <p className="font-sans text-xs font-medium text-charcoal">{step.label}</p>
                       <p className="font-sans text-xs text-charcoal/40">{step.desc}</p>
                     </div>
                   </div>
@@ -201,12 +201,12 @@ export default function ConciergePage() {
       {/* Previous applications */}
       {applications.length > 0 && (
         <div>
-          <h2 className="font-display font-600 text-xl text-charcoal mb-4">Your Applications</h2>
+          <h2 className="font-display font-semibold text-xl text-charcoal mb-4">Your Applications</h2>
           <div className="space-y-3">
             {applications.map(app => (
               <div key={app.id} className="card p-5 flex items-center justify-between">
                 <div>
-                  <p className="font-sans font-500 text-sm text-charcoal">{app.grants?.name}</p>
+                  <p className="font-sans font-medium text-sm text-charcoal">{app.grants?.name}</p>
                   <p className="font-sans text-xs text-charcoal/50 mt-0.5 capitalize">{app.status.replace(/_/g, ' ')}</p>
                 </div>
                 <div className="flex items-center gap-3">

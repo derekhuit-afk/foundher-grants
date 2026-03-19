@@ -23,7 +23,7 @@ export default function SignInPage() {
 
   return (
     <div>
-      <h1 className="font-display font-700 text-3xl text-charcoal mb-2">Welcome back.</h1>
+      <h1 className="font-display font-bold text-3xl text-charcoal mb-2">Welcome back.</h1>
       <p className="font-body text-charcoal/60 mb-8">Sign in to your FoundHer account.</p>
 
       <form onSubmit={handleSubmit} className="space-y-5">
@@ -54,7 +54,7 @@ export default function SignInPage() {
       </div>
       <p className="font-sans text-sm text-charcoal/50 mt-6 text-center">
         Don't have an account?{' '}
-        <Link href="/auth/signup" className="text-clay-500 hover:text-clay-700 font-500">Create one free</Link>
+        <Link href="/auth/signup" className="text-clay-500 hover:text-clay-700 font-medium">Create one free</Link>
       </p>
     </div>
   )

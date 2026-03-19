@@ -47,7 +47,7 @@ export default async function ApplicationsPage() {
       {tier !== 'tier2' ? (
         <div className="card p-12 text-center">
           <Sparkles size={40} className="text-clay-300 mx-auto mb-4" />
-          <h2 className="font-display font-600 text-2xl text-charcoal mb-3">Grant Concierge writes your applications</h2>
+          <h2 className="font-display font-semibold text-2xl text-charcoal mb-3">Grant Concierge writes your applications</h2>
           <p className="font-body text-charcoal/60 mb-6 max-w-md mx-auto leading-relaxed">
             Upgrade to Tier 2 and our AI produces complete, submission-ready grant applications for you. Up to 5 per month.
           </p>
@@ -67,7 +67,7 @@ export default async function ApplicationsPage() {
             <div key={app.id} className="card p-6 flex items-center justify-between gap-4">
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-3 mb-1">
-                  <p className="font-sans font-500 text-charcoal truncate">{app.grants?.name}</p>
+                  <p className="font-sans font-medium text-charcoal truncate">{app.grants?.name}</p>
                   <span className={`badge flex-shrink-0 ${STATUS_COLORS[app.status] || 'badge-sand'}`}>
                     {app.status === 'awarded' ? '🎉 Awarded' : app.status.replace(/_/g, ' ')}
                   </span>
@@ -77,7 +77,7 @@ export default async function ApplicationsPage() {
               </div>
               <div className="flex items-center gap-4 flex-shrink-0">
                 {app.grants?.max_amount && (
-                  <p className="font-display font-700 text-lg text-clay-500">
+                  <p className="font-display font-bold text-lg text-clay-500">
                     {app.grants?.amount_display || formatCurrency(app.grants?.max_amount)}
                   </p>
                 )}

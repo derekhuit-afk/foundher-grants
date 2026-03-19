@@ -108,11 +108,11 @@ export default function GrantsPage() {
         <div className="card p-6 mb-6">
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <p className="font-sans font-500 text-sm text-charcoal mb-3">Eligibility</p>
+              <p className="font-sans font-medium text-sm text-charcoal mb-3">Eligibility</p>
               <div className="flex flex-wrap gap-2">
                 {ELIGIBLE_FILTERS.map(f => (
                   <button key={f.key} onClick={() => toggleFilter(eligFilter, f.key, setEligFilter)}
-                    className={cn('px-3 py-1.5 rounded-full font-sans text-xs font-500 border transition-colors',
+                    className={cn('px-3 py-1.5 rounded-full font-sans text-xs font-medium border transition-colors',
                       eligFilter.includes(f.key) ? 'bg-clay-500 text-white border-clay-500' : 'border-sand-300 text-charcoal/70 hover:border-clay-300')}>
                     {f.label}
                   </button>
@@ -120,11 +120,11 @@ export default function GrantsPage() {
               </div>
             </div>
             <div>
-              <p className="font-sans font-500 text-sm text-charcoal mb-3">Grant Type</p>
+              <p className="font-sans font-medium text-sm text-charcoal mb-3">Grant Type</p>
               <div className="flex flex-wrap gap-2">
                 {TYPE_FILTERS.map(f => (
                   <button key={f.key} onClick={() => toggleFilter(typeFilter, f.key, setTypeFilter)}
-                    className={cn('px-3 py-1.5 rounded-full font-sans text-xs font-500 border transition-colors',
+                    className={cn('px-3 py-1.5 rounded-full font-sans text-xs font-medium border transition-colors',
                       typeFilter.includes(f.key) ? 'bg-forest-600 text-white border-forest-600' : 'border-sand-300 text-charcoal/70 hover:border-forest-300')}>
                     {f.label}
                   </button>
@@ -178,7 +178,7 @@ export default function GrantsPage() {
                   </button>
                 </div>
 
-                <h3 className="font-display font-600 text-charcoal leading-snug mb-1 flex-1">{grant.name}</h3>
+                <h3 className="font-display font-semibold text-charcoal leading-snug mb-1 flex-1">{grant.name}</h3>
                 <p className="font-sans text-xs text-charcoal/50 mb-3">{grant.grantor_organization}</p>
 
                 {grant.description && (
@@ -187,9 +187,9 @@ export default function GrantsPage() {
 
                 <div className="flex items-end justify-between mt-auto pt-3 border-t border-sand-100">
                   <div>
-                    <p className="font-display font-700 text-xl text-clay-500">{grant.amount_display || formatCurrency(grant.max_amount)}</p>
+                    <p className="font-display font-bold text-xl text-clay-500">{grant.amount_display || formatCurrency(grant.max_amount)}</p>
                     {days !== null && (
-                      <p className={cn('font-sans text-xs mt-0.5', days < 14 ? 'text-clay-500 font-500' : 'text-charcoal/40')}>
+                      <p className={cn('font-sans text-xs mt-0.5', days < 14 ? 'text-clay-500 font-medium' : 'text-charcoal/40')}>
                         {days > 0 ? `${days} days left` : 'Deadline passed'}
                       </p>
                     )}
@@ -197,7 +197,7 @@ export default function GrantsPage() {
                   </div>
                   <div className="text-right">
                     {profile && (
-                      <p className={cn('font-sans text-xs font-500', getMatchScoreColor(score))}>
+                      <p className={cn('font-sans text-xs font-medium', getMatchScoreColor(score))}>
                         {getMatchScoreLabel(score)}
                       </p>
                     )}

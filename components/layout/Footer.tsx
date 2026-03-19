@@ -8,9 +8,9 @@ export default function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
               <div className="w-8 h-8 bg-clay-500 rounded-full flex items-center justify-center">
-                <span className="text-white font-display font-700 text-sm">F</span>
+                <span className="text-white font-display font-bold text-sm">F</span>
               </div>
-              <span className="font-display font-600 text-white text-lg">FoundHer <span className="text-clay-400">Grants</span></span>
+              <span className="font-display font-semibold text-white text-lg">FoundHer <span className="text-clay-400">Grants</span></span>
             </div>
             <p className="font-body text-sm leading-relaxed max-w-xs">
               The only grant platform built exclusively for women-owned and Indigenous-owned businesses. Your funding exists. We help you find it.
@@ -22,7 +22,7 @@ export default function Footer() {
             </div>
           </div>
           <div>
-            <p className="font-sans font-500 text-white text-sm mb-4">Platform</p>
+            <p className="font-sans font-medium text-white text-sm mb-4">Platform</p>
             <ul className="space-y-2">
               {[['Browse Grants','/grants'],['Pricing','/pricing'],['Grant Concierge','/concierge'],['Dashboard','/dashboard']].map(([label,href]) => (
                 <li key={href}><Link href={href} className="font-sans text-sm hover:text-clay-400 transition-colors">{label}</Link></li>
@@ -30,7 +30,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <p className="font-sans font-500 text-white text-sm mb-4">Resources</p>
+            <p className="font-sans font-medium text-white text-sm mb-4">Resources</p>
             <ul className="space-y-2">
               {[['WOSB Certification Guide','#'],['8(a) Program Guide','#'],['Grant Writing Tips','#'],['Contact','#']].map(([label,href]) => (
                 <li key={label}><Link href={href} className="font-sans text-sm hover:text-clay-400 transition-colors">{label}</Link></li>

@@ -75,7 +75,7 @@ export default function HomePage() {
                   <div key={i} className="w-9 h-9 rounded-full bg-gradient-to-br from-clay-200 to-sand-300 border-2 border-cream flex items-center justify-center text-sm">{e}</div>
                 ))}
               </div>
-              <p className="font-sans text-sm text-charcoal/60"><span className="font-500 text-charcoal">2,400+ founders</span> found their match</p>
+              <p className="font-sans text-sm text-charcoal/60"><span className="font-medium text-charcoal">2,400+ founders</span> found their match</p>
             </div>
           </div>
 
@@ -85,12 +85,12 @@ export default function HomePage() {
               <div className="card p-6 mb-4 border-l-4 border-l-clay-400">
                 <div className="flex items-start justify-between mb-3">
                   <div>
-                    <p className="font-sans text-xs text-clay-500 font-500 uppercase tracking-wide mb-1">New Match • 94% fit</p>
-                    <h3 className="font-display font-600 text-charcoal text-lg">Amber Grant for Women</h3>
+                    <p className="font-sans text-xs text-clay-500 font-medium uppercase tracking-wide mb-1">New Match • 94% fit</p>
+                    <h3 className="font-display font-semibold text-charcoal text-lg">Amber Grant for Women</h3>
                     <p className="font-sans text-sm text-charcoal/60">WomensNet Foundation</p>
                   </div>
                   <div className="text-right">
-                    <p className="font-display font-700 text-2xl text-forest-600">$10,000</p>
+                    <p className="font-display font-bold text-2xl text-forest-600">$10,000</p>
                     <p className="font-sans text-xs text-charcoal/50">Monthly deadline</p>
                   </div>
                 </div>
@@ -102,12 +102,12 @@ export default function HomePage() {
               <div className="card p-6 ml-6 border-l-4 border-l-forest-400">
                 <div className="flex items-start justify-between mb-3">
                   <div>
-                    <p className="font-sans text-xs text-forest-600 font-500 uppercase tracking-wide mb-1">Featured • 88% fit</p>
-                    <h3 className="font-display font-600 text-charcoal text-lg">First Nations Dev. Institute</h3>
+                    <p className="font-sans text-xs text-forest-600 font-medium uppercase tracking-wide mb-1">Featured • 88% fit</p>
+                    <h3 className="font-display font-semibold text-charcoal text-lg">First Nations Dev. Institute</h3>
                     <p className="font-sans text-sm text-charcoal/60">Native-Focused Foundation</p>
                   </div>
                   <div className="text-right">
-                    <p className="font-display font-700 text-2xl text-forest-600">$75,000</p>
+                    <p className="font-display font-bold text-2xl text-forest-600">$75,000</p>
                     <p className="font-sans text-xs text-charcoal/50">Deadline Aug 31</p>
                   </div>
                 </div>
@@ -118,8 +118,8 @@ export default function HomePage() {
               </div>
               {/* Floating badge */}
               <div className="absolute -top-4 -right-4 bg-forest-600 text-white rounded-2xl px-4 py-3 shadow-lg">
-                <p className="font-sans text-xs font-500">Your match score</p>
-                <p className="font-display font-700 text-2xl">94<span className="text-sm">/100</span></p>
+                <p className="font-sans text-xs font-medium">Your match score</p>
+                <p className="font-display font-bold text-2xl">94<span className="text-sm">/100</span></p>
               </div>
             </div>
           </div>
@@ -131,7 +131,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
           {STATS.map((s) => (
             <div key={s.label} className="text-center">
-              <p className="font-display font-700 text-3xl text-clay-400 mb-1">{s.value}</p>
+              <p className="font-display font-bold text-3xl text-clay-400 mb-1">{s.value}</p>
               <p className="font-sans text-xs text-white/50 leading-snug">{s.label}</p>
             </div>
           ))}
@@ -154,7 +154,7 @@ export default function HomePage() {
               </div>
               <div>
                 <p className="font-sans text-sm text-charcoal/50 line-through mb-2">{p.problem}</p>
-                <p className="font-sans text-sm font-500 text-forest-700 flex items-center gap-2">
+                <p className="font-sans text-sm font-medium text-forest-700 flex items-center gap-2">
                   <CheckCircle size={14} className="text-forest-500 flex-shrink-0" /> {p.solution}
                 </p>
               </div>
@@ -173,9 +173,9 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-8">
             {HOW_IT_WORKS.map((step) => (
               <div key={step.step} className="card-cream p-8 border border-sand-200">
-                <div className="font-display font-700 text-5xl text-clay-200 mb-6">{step.step}</div>
+                <div className="font-display font-bold text-5xl text-clay-200 mb-6">{step.step}</div>
                 <step.icon className="text-clay-500 mb-4" size={28} />
-                <h3 className="font-display font-600 text-xl text-charcoal mb-3">{step.title}</h3>
+                <h3 className="font-display font-semibold text-xl text-charcoal mb-3">{step.title}</h3>
                 <p className="font-body text-charcoal/70 leading-relaxed">{step.body}</p>
               </div>
             ))}
@@ -199,8 +199,8 @@ export default function HomePage() {
                 <span className={`badge ${g.tag.includes('Indigenous') ? 'badge-forest' : 'badge-clay'}`}>{g.tag}</span>
                 <span className="font-sans text-xs text-charcoal/40">{g.type}</span>
               </div>
-              <h3 className="font-display font-600 text-charcoal mb-1 leading-snug">{g.name}</h3>
-              <p className="font-display font-700 text-xl text-clay-500 mt-3">{g.amount}</p>
+              <h3 className="font-display font-semibold text-charcoal mb-1 leading-snug">{g.name}</h3>
+              <p className="font-display font-bold text-xl text-clay-500 mt-3">{g.amount}</p>
               <div className="flex items-center gap-1 mt-2">
                 <Clock size={12} className="text-charcoal/30" />
                 <span className="font-sans text-xs text-charcoal/40">Deadline: {g.deadline}</span>
@@ -230,7 +230,7 @@ export default function HomePage() {
                 <p className="font-body text-white/80 leading-relaxed mb-6 italic">"{t.quote}"</p>
                 <div className="flex items-end justify-between">
                   <div>
-                    <p className="font-sans font-500 text-white text-sm">{t.name}</p>
+                    <p className="font-sans font-medium text-white text-sm">{t.name}</p>
                     <p className="font-sans text-xs text-white/40 mt-0.5">{t.role}</p>
                   </div>
                   <div className="text-right">
@@ -250,7 +250,7 @@ export default function HomePage() {
           <div className="card p-8 border-2 border-sand-200">
             <div className="section-label mb-4">Grant Database</div>
             <div className="flex items-end gap-1 mb-2">
-              <span className="font-display font-700 text-5xl text-charcoal">$29</span>
+              <span className="font-display font-bold text-5xl text-charcoal">$29</span>
               <span className="font-sans text-charcoal/50 mb-2">/month</span>
             </div>
             <p className="font-body text-charcoal/70 mb-8">Full access to the curated grant database. Search, filter, track, and get alerted on deadlines.</p>
@@ -266,10 +266,10 @@ export default function HomePage() {
 
           {/* Tier 2 */}
           <div className="card p-8 border-2 border-clay-400 relative overflow-hidden bg-gradient-to-br from-clay-50 to-cream">
-            <div className="absolute top-4 right-4 bg-clay-500 text-white font-sans text-xs font-500 px-3 py-1 rounded-full">Most Popular</div>
+            <div className="absolute top-4 right-4 bg-clay-500 text-white font-sans text-xs font-medium px-3 py-1 rounded-full">Most Popular</div>
             <div className="section-label mb-4 text-clay-600">Grant Concierge</div>
             <div className="flex items-end gap-1 mb-2">
-              <span className="font-display font-700 text-5xl text-charcoal">$199</span>
+              <span className="font-display font-bold text-5xl text-charcoal">$199</span>
               <span className="font-sans text-charcoal/50 mb-2">/month</span>
             </div>
             <p className="font-sans text-xs text-charcoal/40 mb-2">12-month minimum • avg. ROI $18,500 per year</p>
@@ -293,7 +293,7 @@ export default function HomePage() {
           <p className="font-body text-xl text-white/80 mb-10 leading-relaxed">
             Women-owned and Indigenous-owned businesses are among the most grant-eligible founders in the country. The only problem is finding the right grants. That's what we do.
           </p>
-          <Link href="/auth/signup" className="inline-flex items-center gap-2 px-10 py-5 bg-white text-clay-600 font-sans font-500 text-lg rounded-full hover:bg-cream transition-colors shadow-lg">
+          <Link href="/auth/signup" className="inline-flex items-center gap-2 px-10 py-5 bg-white text-clay-600 font-sans font-medium text-lg rounded-full hover:bg-cream transition-colors shadow-lg">
             Find My Grants Now <ArrowRight size={20} />
           </Link>
           <p className="font-sans text-sm text-white/50 mt-6">No credit card required to browse grants.</p>

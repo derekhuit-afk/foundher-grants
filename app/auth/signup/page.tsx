@@ -30,7 +30,7 @@ export default function SignUpPage() {
 
   return (
     <div>
-      <h1 className="font-display font-700 text-3xl text-charcoal mb-2">Find your grants.</h1>
+      <h1 className="font-display font-bold text-3xl text-charcoal mb-2">Find your grants.</h1>
       <p className="font-body text-charcoal/60 mb-8">
         {tier === 'concierge' ? 'Start your Grant Concierge account.' : 'Create your free FoundHer account.'}
       </p>
@@ -67,7 +67,7 @@ export default function SignUpPage() {
 
       <p className="font-sans text-sm text-charcoal/50 mt-6 text-center">
         Already have an account?{' '}
-        <Link href="/auth/signin" className="text-clay-500 hover:text-clay-700 font-500">Sign in</Link>
+        <Link href="/auth/signin" className="text-clay-500 hover:text-clay-700 font-medium">Sign in</Link>
       </p>
       <p className="font-sans text-xs text-charcoal/30 mt-4 text-center leading-relaxed">
         By creating an account you agree to our Terms of Service and Privacy Policy.

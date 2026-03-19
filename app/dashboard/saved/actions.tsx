@@ -35,7 +35,7 @@ export default function SavedGrantActions({ savedId, currentStatus }: { savedId:
           {STATUSES.map(s => (
             <button key={s} onClick={() => update(s)}
               className={`w-full text-left px-4 py-2 font-sans text-xs hover:bg-sand-50 transition-colors capitalize
-                ${s === currentStatus ? 'text-clay-500 font-500' : 'text-charcoal/70'}`}>
+                ${s === currentStatus ? 'text-clay-500 font-medium' : 'text-charcoal/70'}`}>
               {s}
             </button>
           ))}

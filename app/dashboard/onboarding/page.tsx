@@ -93,11 +93,11 @@ export default function OnboardingPage() {
             <div className="space-y-5">
               <div><label className="label">Your full name *</label><input className="input" value={form.founder_full_name} onChange={e => set('founder_full_name', e.target.value)} placeholder="Maria Salazar" /></div>
               <div><label className="label">Pronouns</label><input className="input" value={form.pronouns} onChange={e => set('pronouns', e.target.value)} placeholder="she/her" /></div>
-              <div><label className="label">Your personal story <span className="text-charcoal/40 font-400">(why you started your business)</span></label>
+              <div><label className="label">Your personal story <span className="text-charcoal/40 font-normal">(why you started your business)</span></label>
                 <textarea className="input min-h-28 resize-y" value={form.why_started_business} onChange={e => set('why_started_business', e.target.value)} placeholder="I started this business because..." /></div>
               <div><label className="label">Professional background</label>
                 <textarea className="input min-h-20 resize-y" value={form.background} onChange={e => set('background', e.target.value)} placeholder="Previous experience, education, skills..." /></div>
-              <div><label className="label">Tribal affiliation <span className="text-charcoal/40 font-400">(if applicable)</span></label>
+              <div><label className="label">Tribal affiliation <span className="text-charcoal/40 font-normal">(if applicable)</span></label>
                 <input className="input" value={form.tribal_affiliation} onChange={e => set('tribal_affiliation', e.target.value)} placeholder="e.g. Lakota Sioux, Cherokee Nation..." /></div>
               <div><label className="label">Community ties</label>
                 <input className="input" value={form.community_ties} onChange={e => set('community_ties', e.target.value)} placeholder="Organizations, communities, networks you're part of" /></div>
@@ -135,7 +135,7 @@ export default function OnboardingPage() {
           {step === 2 && (
             <div className="space-y-6">
               <div>
-                <p className="font-sans font-500 text-sm text-charcoal mb-3">Certifications you currently hold</p>
+                <p className="font-sans font-medium text-sm text-charcoal mb-3">Certifications you currently hold</p>
                 <div className="flex flex-wrap gap-2">
                   {CERTS.map(cert => (
                     <button key={cert} type="button" onClick={() => toggleCert(cert, 'certifications_held')}
@@ -147,7 +147,7 @@ export default function OnboardingPage() {
                 </div>
               </div>
               <div>
-                <p className="font-sans font-500 text-sm text-charcoal mb-3">Certifications you're pursuing or plan to get</p>
+                <p className="font-sans font-medium text-sm text-charcoal mb-3">Certifications you're pursuing or plan to get</p>
                 <div className="flex flex-wrap gap-2">
                   {CERTS.filter(c => !form.certifications_held.includes(c)).map(cert => (
                     <button key={cert} type="button" onClick={() => toggleCert(cert, 'certifications_pending')}
@@ -168,7 +168,7 @@ export default function OnboardingPage() {
                 <textarea className="input min-h-20 resize-y" value={form.communities_served} onChange={e => set('communities_served', e.target.value)} placeholder="Describe the communities, customers, or populations you serve..." /></div>
               <div><label className="label">Social mission</label>
                 <textarea className="input min-h-20 resize-y" value={form.social_mission} onChange={e => set('social_mission', e.target.value)} placeholder="Beyond profit, what change does your business create?" /></div>
-              <div><label className="label">Cultural significance <span className="text-charcoal/40 font-400">(for Indigenous founders)</span></label>
+              <div><label className="label">Cultural significance <span className="text-charcoal/40 font-normal">(for Indigenous founders)</span></label>
                 <textarea className="input min-h-20 resize-y" value={form.cultural_significance} onChange={e => set('cultural_significance', e.target.value)} placeholder="How does your business connect to your culture, community, or tribal identity?" /></div>
               <div><label className="label">Projected jobs to create with grant funding</label>
                 <input className="input" type="number" min={0} value={form.jobs_to_create} onChange={e => set('jobs_to_create', parseInt(e.target.value))} /></div>
@@ -183,7 +183,7 @@ export default function OnboardingPage() {
               <div><label className="label">Primary use of funds</label>
                 <textarea className="input min-h-32 resize-y" value={form.primary_use_of_funds} onChange={e => set('primary_use_of_funds', e.target.value)} placeholder="Be specific: e.g. Purchase 2 industrial sewing machines ($8,000), hire a part-time assistant ($18,000), marketing campaign ($4,000)..." /></div>
               <div className="bg-forest-50 border border-forest-200 rounded-xl p-4">
-                <p className="font-sans text-sm font-500 text-forest-700 mb-1">💡 Pro tip</p>
+                <p className="font-sans text-sm font-medium text-forest-700 mb-1">💡 Pro tip</p>
                 <p className="font-sans text-xs text-forest-600 leading-relaxed">The more specific you are about how you'll use the money, the stronger your applications will be. "Grow my business" won't win. "Purchase commercial kitchen equipment to fulfill 3 retail contracts" will.</p>
               </div>
             </div>
