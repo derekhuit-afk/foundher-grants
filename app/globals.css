@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --clay-500: #c75f28;
+  --forest-500: #327a32;
+  --sand-300: #e4ca98;
+  --cream: #fdfaf5;
+  --charcoal: #1c1917;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--cream);
+  color: var(--charcoal);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Grain overlay for texture */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-clay-500 text-white font-sans font-500 rounded-full
+           hover:bg-clay-600 active:bg-clay-700 transition-all duration-200
+           shadow-sm hover:shadow-md;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-transparent text-clay-600 font-sans font-500 rounded-full
+           border border-clay-300 hover:bg-clay-50 active:bg-clay-100 transition-all duration-200;
+  }
+  .btn-forest {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-forest-600 text-white font-sans font-500 rounded-full
+           hover:bg-forest-700 transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+  .card {
+    @apply bg-white rounded-2xl border border-sand-200 shadow-sm hover:shadow-md transition-shadow duration-200;
+  }
+  .card-cream {
+    @apply bg-cream rounded-2xl border border-sand-200;
+  }
+  .input {
+    @apply w-full px-4 py-3 bg-white border border-sand-300 rounded-xl font-sans text-charcoal
+           placeholder:text-sand-400 focus:outline-none focus:ring-2 focus:ring-clay-300 focus:border-clay-400
+           transition-all duration-150;
+  }
+  .label {
+    @apply block text-sm font-sans font-500 text-charcoal mb-1.5;
+  }
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-sans font-500;
+  }
+  .badge-clay  { @apply badge bg-clay-100 text-clay-700; }
+  .badge-forest { @apply badge bg-forest-100 text-forest-700; }
+  .badge-sand  { @apply badge bg-sand-100 text-sand-700; }
+  .section-label {
+    @apply text-xs font-sans font-500 uppercase tracking-[0.15em] text-clay-500;
+  }
+  .heading-display {
+    @apply font-display font-700 leading-tight tracking-tight;
+  }
+}
+
+/* Staggered animation delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* Scrollbar styling */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #e4ca98; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #c75f28; }
+
+/* Rich text prose */
+.prose-foundher p { @apply font-body text-charcoal/80 leading-relaxed mb-4; }
+.prose-foundher h2 { @apply font-display text-2xl font-600 text-charcoal mb-3 mt-8; }
+.prose-foundher h3 { @apply font-display text-xl font-600 text-charcoal mb-2 mt-6; }
+.prose-foundher ul { @apply list-disc pl-5 mb-4 space-y-1; }
+.prose-foundher li { @apply font-body text-charcoal/80; }
