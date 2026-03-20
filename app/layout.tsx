@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: 'FoundHer Grants',
     description: 'Find and win grants built for founders like you.',
     type: 'website',
-    url: 'https://foundher.com',
+    url: 'https://foundhergrants.com',
   },
 }
 
