@@ -11,18 +11,20 @@ export default function SignUpForm() {
   const tier = params.get('tier')
   const [form, setForm] = useState({ full_name: '', email: '', password: '' })
   const [showPw, setShowPw] = useState(false)
+  const [agreedTos, setAgreedTos] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    if (!agreedTos) { setError('You must agree to the Terms of Service and Privacy Policy to create an account.'); return }
     setLoading(true)
     setError('')
     const supabase = createClient()
     const { error } = await supabase.auth.signUp({
       email: form.email,
       password: form.password,
-      options: { data: { full_name: form.full_name } },
+      options: { data: { full_name: form.full_name, tos_accepted_at: new Date().toISOString() } },
     })
     if (error) { setError(error.message); setLoading(false); return }
     router.push(tier === 'concierge' ? '/dashboard/onboarding?tier=concierge' : '/dashboard/onboarding')
@@ -57,16 +59,25 @@ export default function SignUpForm() {
           </div>
         </div>
         {error && <div className="bg-clay-50 border border-clay-200 text-clay-700 rounded-xl p-3 font-sans text-sm">{error}</div>}
-        <button type="submit" disabled={loading} className="btn-primary w-full justify-center py-4 text-base">
+        <div className="flex items-start gap-3">
+          <input type="checkbox" id="tos-agree" checked={agreedTos}
+            onChange={e => setAgreedTos(e.target.checked)}
+            className="mt-1 w-4 h-4 rounded border-sand-300 text-clay-500 focus:ring-clay-400 cursor-pointer flex-shrink-0" />
+          <label htmlFor="tos-agree" className="font-sans text-xs text-charcoal/60 leading-relaxed cursor-pointer">
+            I have read and agree to the{' '}
+            <Link href="/terms" target="_blank" className="text-clay-500 hover:text-clay-700 underline">Terms of Service</Link>
+            {' '}and{' '}
+            <Link href="/privacy" target="_blank" className="text-clay-500 hover:text-clay-700 underline">Privacy Policy</Link>.
+            I understand that AI-generated grant content must be reviewed before submission and that FoundHer Grants does not guarantee funding.
+          </label>
+        </div>
+        <button type="submit" disabled={loading || !agreedTos} className="btn-primary w-full justify-center py-4 text-base disabled:opacity-50 disabled:cursor-not-allowed">
           {loading ? 'Creating account...' : <><span>Create My Account</span> <ArrowRight size={18} /></>}
         </button>
       </form>
       <p className="font-sans text-sm text-charcoal/50 mt-6 text-center">
         Already have an account?{' '}
         <Link href="/auth/signin" className="text-clay-500 hover:text-clay-700 font-medium">Sign in</Link>
-      </p>
-      <p className="font-sans text-xs text-charcoal/30 mt-4 text-center leading-relaxed">
-        By creating an account you agree to our Terms of Service and Privacy Policy.
       </p>
     </div>
   )
