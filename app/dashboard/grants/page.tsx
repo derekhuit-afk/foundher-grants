@@ -165,7 +165,8 @@ export default function GrantsPage() {
             const isSaved = saved.has(grant.id)
             const days = grant.deadline ? daysUntil(grant.deadline) : null
             return (
-              <div key={grant.id} className="card p-5 flex flex-col hover:border-clay-300 transition-all">
+              <div key={grant.id} className="card p-5 flex flex-col hover:border-clay-300 transition-all cursor-pointer"
+                onClick={() => window.location.href = `/dashboard/grants/${grant.id}`}>
                 <div className="flex items-start justify-between mb-3">
                   <div className="flex flex-wrap gap-1.5">
                     {grant.eligible_for?.slice(0, 2).map((e: string) => (
@@ -174,7 +175,7 @@ export default function GrantsPage() {
                       </span>
                     ))}
                   </div>
-                  <button onClick={() => toggleSave(grant.id)} className="text-charcoal/30 hover:text-clay-500 transition-colors ml-2 flex-shrink-0">
+                  <button onClick={(e) => { e.stopPropagation(); toggleSave(grant.id) }} className="text-charcoal/30 hover:text-clay-500 transition-colors ml-2 flex-shrink-0">
                     {isSaved ? <BookmarkCheck size={18} className="text-clay-500" /> : <Bookmark size={18} />}
                   </button>
                 </div>
@@ -202,10 +203,9 @@ export default function GrantsPage() {
                         {getMatchScoreLabel(score)}
                       </p>
                     )}
-                    <a href={grant.source_url} target="_blank" rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 font-sans text-xs text-clay-500 hover:text-clay-700 mt-1">
-                      View Grant <ExternalLink size={11} />
-                    </a>
+                    <span className="inline-flex items-center gap-1 font-sans text-xs text-clay-500 hover:text-clay-700 mt-1">
+                      View Details <ExternalLink size={11} />
+                    </span>
                   </div>
                 </div>
               </div>
